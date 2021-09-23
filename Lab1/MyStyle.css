@@ -1,20 +1,61 @@
 h1 {
-	color: blue;
+	color: white;
 }
 
 li {
-	background-color: black;
-	color: grey;
+	list-style-type: none;
+	background-color: darkblue;
+	color: white;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-top: 2px solid blue;
+	border-left: 2px solid blue;
+	border-right: 2px solid blue;
 }
 
 body {
+	background-image: url(sky.jpg);
 	text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-ol {
-  text-align: left;
-  padding-left: 30%;
-  padding-right: 30%;
+img {
+	border: 2px solid blue;
+}
+
+dl {
+	text-align: left;
+}
+
+li:last-child {
+	border-bottom: 2px solid blue;
+}
+
+.topPanel {
+	background-color: darkblue;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	border: 2px solid blue;
+}
+
+.midLine {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.mainInput {
+	resize: none;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.addBtn {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 10px;
+	height: 30px;
+}
+
+.removeBtn {
+	float: right;
+	background-color: white;
 }
