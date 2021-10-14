@@ -10,6 +10,7 @@ function addItem() {
                 value: document.getElementById("txtArea").value,
                 checked: false
         }
+        document.getElementById("txtArea").value = "";
         items.push(item);
         render()
 }
@@ -37,14 +38,14 @@ function render() {
                         if (items[j].checked) chkd = "checked=\'checked\'";
                 }
                 catch {}
-                htmlText += "<li><input type='checkbox'" + chkd + "id='" + ID + "' name='" + ID + ">'/>&nbsp;" +
+                htmlText += "<li><input type='checkbox' " + chkd + " id='" + ID + "' name='" + ID + ">'/>&nbsp;" +
                     "<label for='" + ID + "'>" + val + "</label>" +
                     "<button style=\"float: right;\n" +
                     "background-color: white;\" onclick=\"removeItemById(\'" + ID + "\')\">&#10006;</button></li>"
         }
         listHTML.innerHTML = htmlText;
         /* pattern
-        <li><input type="checkbox" id="<ID>>" name="<ID>>"/>&nbsp;
+        <li><input type="checkbox" id="<ID>" name="<ID>>"/>&nbsp;
                 <label htmlFor="<ID>">To feed a potato</label>
                 <button className="removeBtn" onclick="removeItemById(<ID>)>&#10006;</button></li> */
 }
