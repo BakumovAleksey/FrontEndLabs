@@ -7,7 +7,8 @@ const uid = function(){
 function addItem() {
         item = {
                 id: uid(),
-                value: document.getElementById("txtArea").value
+                value: document.getElementById("txtArea").value,
+                checked: false
         }
         items.push(item);
         render()
@@ -29,14 +30,21 @@ function render() {
         for (let j = 0; j < items.length; j++) {
                 const ID = items[j].id;
                 const val = items[j].value;
-                htmlText += "<li><input type=\"checkbox\" id=\"" + ID + "\" name=\"" + ID + ">\"/>&nbsp;" +
-                    "<label htmlFor=\"" + ID + ">\">" + val + "</label>" +
-                    "<button className=\"removeBtn\" onclick=\"removeItemById(\"" + ID + "\")\">&#10006;</button></li>"
+                let chkd = "";
+                try {
+                        let checkBox = document.getElementById(ID);
+                        items[j].checked = checkBox.checked;
+                        if (items[j].checked) chkd = "checked=\'checked\'";
+                }
+                catch {}
+                htmlText += "<li><input type='checkbox'" + chkd + "id='" + ID + "' name='" + ID + ">'/>&nbsp;" +
+                    "<label for='" + ID + "'>" + val + "</label>" +
+                    "<button style=\"float: right;\n" +
+                    "background-color: white;\" onclick=\"removeItemById(\'" + ID + "\')\">&#10006;</button></li>"
         }
-        console.log(htmlText)
-        list.innerHTML = htmlText;
+        listHTML.innerHTML = htmlText;
         /* pattern
         <li><input type="checkbox" id="<ID>>" name="<ID>>"/>&nbsp;
-                <label htmlFor="<ID>>">To feed a potato</label>
+                <label htmlFor="<ID>">To feed a potato</label>
                 <button className="removeBtn" onclick="removeItemById(<ID>)>&#10006;</button></li> */
 }
