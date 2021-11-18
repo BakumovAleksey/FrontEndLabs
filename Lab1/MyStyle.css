@@ -59,3 +59,19 @@ li:last-child {
 	float: right;
 	background-color: white;
 }
+
+.sortLabelButton {
+	color: cornsilk;
+	padding-right: 10px;
+	text-decoration: underline;
+}
+
+.sortLabelButtonPressed {
+	color: darkgray;
+}
+
+.sortLabelButton:hover {
+	color: cyan;
+	padding-right: 10px;
+	text-decoration: underline;
+}

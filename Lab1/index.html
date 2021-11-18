@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="MyStyle.css">
 </head>
 <body>
-<img src="pavyk.jpg"></img>
+<img src="pavyk.jpg"/>
 <div class="midLine">
   <div class="topPanel">
   <h1>TODO list:</h1>
@@ -14,11 +14,14 @@
   </TEXTAREA><br>
   
   <button class="addBtn" onclick="addItem()">Add</button> <br>
+    <label class="sortLabelButton" onclick="changeSort(SORTING_MODE.ALL)" id="sort_all">All</label>
+    <label class="sortLabelButton" onclick="changeSort(SORTING_MODE.COMPLETED)" id="sort_completed">Completed</label>
+    <label class="sortLabelButton" onclick="changeSort(SORTING_MODE.IN_PROGRESS)" id="sort_inProgress">In progress</label>
   </div>
   <dl id="list">
 	
   </dl><br>
 </div>
-<script src="scpt.js"/>
+<script src="scpt.js"></script>
 </body>
 </html> 
